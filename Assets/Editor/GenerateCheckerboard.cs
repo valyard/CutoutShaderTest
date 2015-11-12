@@ -39,7 +39,7 @@ public class GenerateCheckerboard : EditorWindow {
 			for (var x = 0; x < width; x++)
 			{
 				var xcoeff = Mathf.FloorToInt(x/size);
-				arr[y*width + x] = (xcoeff + ycoeff) % 2 == 0 ? Color.clear : Color.black;
+				arr[y*width + x] = (xcoeff + ycoeff) % 2 == 0 ? Color.clear : Color.white;
 			}
 		}
 		tex.SetPixels32(arr);

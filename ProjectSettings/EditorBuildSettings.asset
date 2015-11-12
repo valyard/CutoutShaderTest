@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Transparent.unity
   - enabled: 1
     path: Assets/Scenes/Cutout.unity
+  - enabled: 1
+    path: Assets/Scenes/Cutout ZWrite Off.unity
+  - enabled: 1
+    path: Assets/Scenes/Opaque.unity

@@ -7,21 +7,19 @@ public class Controller : MonoBehaviour {
 
 	public Text Text;
 	public Text CloneText;
+	public int MaxLevels = 3;
 
 	private Transform container;
 	private GameObject template;
 
-	private List<string> levels = new List<string>() {"Transparent", "Cutout"};
 	private int currentLevel = 0;
 
 	public void LoadNextLevel()
 	{
-		Application.LoadLevel(levels[currentLevel]);
-		Text.text = "Current level: " + levels[currentLevel] + ".\nClick to load next!";
-
+		Application.LoadLevel(currentLevel+1);
 		StartCoroutine(updateLevel());
 
-		currentLevel = (currentLevel + 1) % 2;
+		currentLevel = (currentLevel + 1) % MaxLevels;
 	}
 
 	public void Clone()
@@ -42,6 +40,9 @@ public class Controller : MonoBehaviour {
 	private IEnumerator updateLevel()
 	{
 		yield return null;
+
+		Text.text = "Current level: " + Application.loadedLevelName + ".\nClick to load next!";
+
 		container = GameObject.Find("Container").transform;
 		template = container.GetChild(0).gameObject;
 		updateCloneText();

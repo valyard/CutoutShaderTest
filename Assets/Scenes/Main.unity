@@ -411,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: {fileID: 404457009}
   CloneText: {fileID: 1337191923}
+  MaxLevels: 4
 --- !u!1 &1199975948
 GameObject:
   m_ObjectHideFlags: 0

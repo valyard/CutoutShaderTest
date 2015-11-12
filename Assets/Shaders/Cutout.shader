@@ -3,10 +3,12 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		_ZWrite ("ZWrite", Int) = 1
 	}
 	SubShader
 	{
 		Tags { "Queue"="AlphaTest" }
+		ZWrite [_ZWrite]
 
 		Pass
 		{
@@ -42,7 +44,7 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
-				clip(col.a - .1);
+				clip(col.a - .5);
 				return col;
 			}
 			ENDCG
